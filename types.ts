@@ -1,48 +1,65 @@
 
-export interface Project {
-  id: string;
-  title: string;
-  status: 'Ativo' | 'Em testes';
-  description: string;
-  longDescription: string;
-  techStack: string[];
-  features: string[];
-  link: string;
-  responsibility: 'Projeto autoral' | 'Feito sob demanda';
-  image: string;
+export interface KeyAuthResponse {
+  success: boolean;
+  message: string;
+  info?: UserInfo;
+  sessionid?: string;
 }
 
-export interface Experience {
-  period: string;
-  role: string;
-  company: string;
-  description: string;
+export interface UserInfo {
+  username: string;
+  subscriptions: Subscription[];
+  ip: string;
+  hwid: string;
+  createdate: string;
+  lastlogin: string;
+  isAdmin?: boolean;
 }
 
-export interface Education {
-  period: string;
-  degree: string;
-  institution: string;
-}
-
-export interface ProfileData {
-  name: string;
+export interface KeyAuthUser {
+  username: string;
   email: string;
-  phone: string;
-  whatsapp: string;
-  github: string;
-  linkedin: string;
-  githubPages: string;
-  profileImage: string;
-  summaryShort: string;
-  summaryLong: string;
-  skills: {
-    hard: string[];
-    soft: string[];
-    tools: string[];
-  };
-  experiences: Experience[];
-  education: Education[];
-  hobbies: string[];
-  projects: Project[];
+  hwid: string;
+  ip: string;
+  lastlogin: string;
+  subscriptions: Subscription[];
+}
+
+export interface HwidStatus {
+  weekly_available: boolean;
+  monthly_remaining: number;
+  credits: number;
+  next_free_at: string | null;
+}
+
+export interface HwidResetLog {
+  username: string;
+  type: 'free' | 'paid';
+  created_at: string;
+}
+
+export interface AdminUser {
+  username: string;
+  password: string;
+  createdAt: string;
+}
+
+export interface Subscription {
+  subscription: string;
+  key: string;
+  expiry: string;
+  timeleft: number;
+}
+
+export enum Page {
+  HOME = 'HOME',
+  DASHBOARD = 'DASHBOARD',
+  STORE = 'STORE',
+  TERMS = 'TERMS',
+  ADMIN_DASHBOARD = 'ADMIN_DASHBOARD'
+}
+
+export enum AuthView {
+  LOGIN = 'LOGIN',
+  REGISTER = 'REGISTER'
 }

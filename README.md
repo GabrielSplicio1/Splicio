@@ -6,7 +6,7 @@
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ztx6BC5D3zWhed5krhKpvytjENwfCn_o
+View your app in AI Studio: https://ai.studio/apps/drive/1IrvpkjOmoiu5MGAdk47C3-SDMwnRneG4
 
 ## Run Locally
 
@@ -18,3 +18,23 @@ View your app in AI Studio: https://ai.studio/apps/drive/1ztx6BC5D3zWhed5krhKpvy
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+
+---
+
+## Download premium no Netlify (IMPORTANTE)
+
+Para o link funcionar no Netlify, coloque o arquivo premium em:
+
+`public/downloadpremium/G-XiteWall-Client.zip`
+
+E o free em:
+
+`public/programa_free.exe`
+
+Depois rode:
+
+- `npm install`
+- `npm run build`
+
+Faça o deploy da pasta `dist/` (manual) **ou** conecte o repositório no Netlify (ele vai buildar automático via netlify.toml).
